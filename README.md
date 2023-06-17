@@ -1,4 +1,4 @@
 # rental-frontend
 This is a rental website called smart-hama.
 created using MERN stack.
-The frontend uses vite as the .
+The frontend uses vite as the launcher.
