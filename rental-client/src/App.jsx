@@ -1,15 +1,18 @@
 import React from 'react'
-
+import { Route,Routes } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header'
+import Dashboard from './components/Dashboard/Dashboard'
 
 function App() {
 
 
   return (
-    <>
-     <Header />
-    </>
+   
+    <Routes>
+      <Route path='/' element={<Dashboard />}/>
+    </Routes>
+     
+   
   )
 }
 
