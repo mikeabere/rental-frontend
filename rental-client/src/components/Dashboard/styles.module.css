@@ -1,13 +1,19 @@
 
 .grid_container{
     display: grid;
-    grid-template-columns: 13rem 1fr 1fr 1fr ;
+    grid-template-columns: 16.25rem 1fr 1fr 1fr ;
     grid-template-rows: 0.2fr 3fr;
     height: 100vh;
     grid-template-areas: 
     "sidebar header header header"
     "sidebar main main main";
 }
+.material-icons-outlined{
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 2rem;
+}
+
 .header{
     grid-area: header;
     height: 4.5rem;
@@ -17,6 +23,9 @@
     padding: 0 30px 0 30px;
     box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35); 
 }
+.menu_icon{
+    display: none;
+}
 .sidebar{
     grid-area: sidebar;
     background-color: #263043;
@@ -25,9 +34,74 @@
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
 }
+.sidebar_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 30px 30px;
+    margin-bottom: 30px;
+}
+.sidebar_title > span{
+    display: none;
+}
+.sidebar_brand{
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.sidebar_list{
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+}
+.sidebar_list_item{
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+}
+.sidebar_list_item:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
 .main_section{
     grid-area: main;
     overflow-y: auto;
     padding: 20px 20px;
     color: rgba(255, 255, 255, 0.95);
+}
+.main_title{
+    display: flex;
+    justify-content: space-between;
+}
+.main_cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    border-radius: 5px;
+}
+.card:first-child {
+    background-color: #2962ff;
+}
+.card:nth-child(2){
+    background-color: #ff6d00;
+}
+.card:nth-child(3){
+    background-color: #2e7d32;
+}
+.card:nth-child(4){
+    background-color: #d50000;
+}
+.card_inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card_inner > .material-icons-outlined{
+    font-size: 45px;
 }
