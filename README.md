@@ -1,6 +1,6 @@
 # rental-frontend
 This is a rental WEBAPP called Smart-Hama.
-created using MERN stack(MongoBB,Express,React,Nodejs) stack.
+created using MERN Stack(MongoBB,Express,React,Nodejs) stack.
 The frontend uses vite as the web launcher.
 It is a rental listing WebApplication.
 It is created using tools like.
