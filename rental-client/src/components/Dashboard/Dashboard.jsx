@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './styles.module.css'
-
+//import  './styles.module.css'
+import { Link } from "react-router-dom";
 
 
 
@@ -11,17 +12,17 @@ export default function Dashboard(){
         <div className={styles.grid_container}>
             <header className={styles.header}>
               <div className={styles.menu_icon}>
-               <span className="material-icons-outlined">menu</span>
+               <span class="material-icons-outlined">menu</span>
 
                <div className={styles.header_left}>
-               <span className="material-icons-outlined">search</span>
+               <span class="material-icons-outlined">search</span>
                
                </div>
 
                <div className={styles.header_right}>
-                <span className="material-icons-outlined">notifications</span>
-                <span className="material-icons-outlined">email</span>
-                <span className="material-icons-outlined">account_circle</span>
+                <span class="material-icons-outlined">notifications</span>
+                <span class="material-icons-outlined">email</span>
+                <span class="material-icons-outlined">account_circle</span>
                </div>
 
               </div>
@@ -39,7 +40,7 @@ export default function Dashboard(){
                 <span class="material-icons-outlined">dashboard</span>Dashboard
                 </li>
                 <li className={styles.sidebar_list_item}>
-                <span class="material-icons-outlined">person_outline</span>Landlord
+                <span class="material-icons-outlined">person_outline</span><Link style={{textDecoration: 'none', color: 'white'}} to='/Landlord'>Landlord</Link>
                 </li>
                 <li className={styles.sidebar_list_item}>
                 <span class="material-icons-outlined">groups</span>Tennants
