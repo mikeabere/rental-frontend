@@ -1,14 +1,12 @@
-import React from 'react';
-import   './dashboard.css'
+import React from "react";
+import './houses.css'
+import {Link} from "react-router-dom";
 
-import {Link} from "react-router-dom"
-
-
-
-export default function Dashboard() {
-
+export default function Houses() {
 
     return(
+
+
         <div className='grid_container'>
             <header className='header'>
               <div className='menu_icon'>
@@ -45,9 +43,7 @@ export default function Dashboard() {
                 <li className='sidebar_list_item'>
                 <span className="material-icons-outlined">groups</span>Tennants
                 </li>
-                <li className='sidebar_list_item'>
-                <span className="material-icons-outlined">apartment</span><Link style={{textDecoration: 'none', color: 'white'}} to='./Houses'>Houses</Link>
-                </li>
+               
                 <li className='sidebar_list_item'>
                 <span className="material-icons-outlined">payment</span>Payment
                 </li>
@@ -59,44 +55,67 @@ export default function Dashboard() {
                 </li>
               </ul>
             </aside>
-
-            <main className='main_section'>
-              <div className='main_title'>
-                <h2>DASHBOARD</h2>
-              </div>
-              <div className='main_cards'>
-
-                <div className='card'>
-                 <div className='card_inner'>
-                  <h3>LANDLORDS</h3>
-                  <span className="material-icons-outlined">inventory_2</span>
-                 </div>
-                 <h1>2</h1>
-                </div>
-                <div className='card'>
-                 <div className='card_inner'>
-                  <h3>TENNANTS</h3>
-                  <span className="material-icons-outlined">inventory_2</span>
-                 </div>
-                 <h1>24</h1>
-                </div>
-                <div className='card'>
-                 <div className='card_inner'>
-                  <h3>HOUSES</h3>
-                  <span className="material-icons-outlined">inventory_2</span>
-                 </div>
-                 <h1>5</h1>
-                </div>
-                <div className='card'>
-                 <div className='card_inner'>
-                  <h3>PAYMENT</h3>
-                  <span className="material-icons-outlined">inventory_2</span>
-                 </div>
-                 <h1>20000</h1>
-                </div>
-
-              </div>
+            
+            <main>
+            <main>
+              <table className="table" style={{width: '800px',marginTop:'4rem', marginLeft:'3rem'}}>
+              <thead>
+               <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                <th scope="col">Action</th>
+              </tr>
+           </thead>
+          <tbody>
+           <tr>
+            <th scope="row">1</th>
+             <td>Mark</td>
+             <td>Otto</td>
+             <td>@mdo</td>
+             <td>
+              <button type="button" class="btn btn-success" style={{marginRight:'1rem'}}>Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+             </td>
+          </tr>
+          <tr>
+           <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td>
+              <button type="button" class="btn btn-success" style={{marginRight:'1rem'}}>Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+             </td>
+         </tr>
+        <tr>
+         <th scope="row">3</th>
+         <td>Larry</td>
+         <td>Bird</td>
+         <td>@twitter</td>
+         <td>
+              <button type="button" class="btn btn-success" style={{marginRight:'1rem'}}>Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+             </td>
+       </tr>
+       <tr>
+           <th scope="row">4</th>
+            <td>Mike</td>
+            <td>Abere</td>
+            <td>@mike</td>
+            <td>
+              <button type="button" class="btn btn-success" style={{marginRight:'1rem'}}>Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+             </td>
+         </tr>
+     </tbody>
+    </table>
+      </main>
             </main>
+          
         </div>
+    
+
     )
 }

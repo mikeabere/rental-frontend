@@ -1,9 +1,9 @@
 import React from 'react'
-import { Route,Routes } from 'react-router-dom'
+import { Routes,Route } from 'react-router-dom'
 import './App.css'
 import Dashboard from './components/Dashboard/Dashboard'
 import Landlord from './components/Landlord/Landlord'
-
+import Houses from './components/Houses/Houses'
 
 function App() {
 
@@ -11,8 +11,9 @@ function App() {
   return (
    
     <Routes>
-      <Route path='/' element={<Dashboard />}/>
-      <Route path='./Landlord' element={<Landlord />}/>
+      <Route exact path='/' element={<Dashboard />}/>
+      <Route exact path='/Landlord' element={<Landlord />}/>
+      <Route exact path='/Houses' element={<Houses />}/>
     </Routes>
      
    

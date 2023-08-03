@@ -25,6 +25,8 @@
 }
 .menu_icon{
     display: none;
+  
+    
 }
 .sidebar{
     grid-area: sidebar;
