@@ -60,6 +60,8 @@ export default function Landlord() {
               </aside>
   
               <main>
+              <button type="button" class="btn btn-primary" style={{marginTop: '1rem', marginLeft:'1rem'}}>Add Landlord</button>
+                
               <table className="table" style={{width: '800px',marginTop:'4rem', marginLeft:'3rem'}}>
               <thead>
                <tr>
