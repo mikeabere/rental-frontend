@@ -1,5 +1,5 @@
 # rental-frontend
-This is a rental WEBAPP called Smart-Hama.
+This is a rental WEBAPP called Keja-Hama.
 created using MERN Stack(MongoBB,Express,React,Nodejs) stack.
 The frontend uses vite as the web launcher.
 It is a rental management.
