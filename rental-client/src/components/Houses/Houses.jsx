@@ -28,7 +28,7 @@ export default function Houses() {
             <aside className='sidebar'>
               <div className='sidebar_title'>
                 <div className='sidebar_brand'>
-                <span className="material-icons-outlined">home</span>Smart Hama
+                <span className="material-icons-outlined">home</span>Keja Smart
                 </div>
                 <span className="material-icons-outlined">close</span>
               </div>
@@ -58,7 +58,8 @@ export default function Houses() {
             
             <main>
             <main>
-              <table className="table" style={{width: '800px',marginTop:'4rem', marginLeft:'3rem'}}>
+            <button type="button" class="btn btn-primary" style={{marginTop: '1rem', marginLeft:'1rem'}}>Add House</button>
+              <table className="table" style={{width: '800px',marginTop:'4rem', marginLeft:'3rem', textAlign:'center'}}>
               <thead>
                <tr>
                 <th scope="col">#</th>

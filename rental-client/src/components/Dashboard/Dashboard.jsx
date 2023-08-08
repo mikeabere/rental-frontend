@@ -30,7 +30,7 @@ export default function Dashboard() {
             <aside className='sidebar'>
               <div className='sidebar_title'>
                 <div className='sidebar_brand'>
-                <span className="material-icons-outlined">home</span>Smart Hama
+                <span className="material-icons-outlined">home</span>Keja Smart
                 </div>
                 <span className="material-icons-outlined">close</span>
               </div>
@@ -40,13 +40,13 @@ export default function Dashboard() {
                 <span className="material-icons-outlined">dashboard</span>Dashboard
                 </li>
                 <li className='sidebar_list_item'>
-                <span className="material-icons-outlined">person_outline</span><Link style={{textDecoration: 'none', color: 'white'}} to='./Landlord'>Landlord</Link>
+                <span className="material-icons-outlined">person_outline</span><Link style={{textDecoration: 'none', color: 'white'}} to='/Landlord'>Landlord</Link>
                 </li>
                 <li className='sidebar_list_item'>
                 <span className="material-icons-outlined">groups</span>Tennants
                 </li>
                 <li className='sidebar_list_item'>
-                <span className="material-icons-outlined">apartment</span><Link style={{textDecoration: 'none', color: 'white'}} to='./Houses'>Houses</Link>
+                <span className="material-icons-outlined">apartment</span><Link style={{textDecoration: 'none', color: 'white'}} to='/Houses'>Houses</Link>
                 </li>
                 <li className='sidebar_list_item'>
                 <span className="material-icons-outlined">payment</span>Payment
