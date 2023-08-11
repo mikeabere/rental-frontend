@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import  './landlord.css'
+import  './tennants.css'
 //import Modal from 'react-bootstrap/Modal'
-import AddLandlordModal from '../AddLandlordModal';
+import AddTennantModal from '../AddTennantModal';
 
 
 
 
-export default function Landlord() {
+export default function Tennants() {
 
-const [landlord, setLandlord] = useState([]);
+const [tennant, setTennant] = useState([]);
 
 
 useEffect(()=>{
   const fetchData = async () => {
     try {
-      const result = await axios.get('http://localhost:5000/api/landlords');
-      setLandlord(result.data.data);
+      const result = await axios.get('http://localhost:5000/api/tennants');
+      setTennant(result.data.data);
     } catch (error) {
       console.error(error);
     }
@@ -27,7 +27,7 @@ useEffect(()=>{
 },[]);
 
 function handleDelete(id){
-  axios.delete(`http://localhost:5000/api/landlord/delete/${id}`)
+  axios.delete(`http://localhost:5000/api/tennant/delete/${id}`)
 
 }
 
@@ -62,10 +62,6 @@ function handleDelete(id){
                   <li className='sidebar_list_item'>
                   <span className="material-icons-outlined">dashboard</span>Dashboard
                   </li>
-                 
-                  <li className='sidebar_list_item'>
-                  <span className="material-icons-outlined">groups</span>Tennants
-                  </li>
                   <li className='sidebar_list_item'>
                   <span className="material-icons-outlined">apartment</span>Houses
                   </li>
@@ -83,7 +79,7 @@ function handleDelete(id){
   
               <main>
                 
-              <AddLandlordModal />
+              <AddTennantModal />
                 
               <table className="table" style={{width: '800px',marginTop:'4rem', marginLeft:'3rem', textAlign:'center'}}>
               <thead>
@@ -97,7 +93,7 @@ function handleDelete(id){
            </thead>
           <tbody>
             {
-              landlord.map(row =>(
+              tennant.map(row =>(
                 <>
                  <tr key='_id'>
             <th scope="row">{row.idnumber}</th>

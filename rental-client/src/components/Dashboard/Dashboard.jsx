@@ -43,7 +43,7 @@ export default function Dashboard() {
                 <span className="material-icons-outlined">person_outline</span><Link style={{textDecoration: 'none', color: 'white'}} to='/Landlord'>Landlord</Link>
                 </li>
                 <li className='sidebar_list_item'>
-                <span className="material-icons-outlined">groups</span>Tennants
+                <span className="material-icons-outlined">groups</span><Link style={{textDecoration: 'none', color: 'white'}} to='/Tennants'>Tennants</Link>
                 </li>
                 <li className='sidebar_list_item'>
                 <span className="material-icons-outlined">apartment</span><Link style={{textDecoration: 'none', color: 'white'}} to='/Houses'>Houses</Link>

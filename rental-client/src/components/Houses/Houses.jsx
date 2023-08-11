@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './houses.css'
 import {Link} from "react-router-dom";
-
+import axios from 'axios';
+import AddHouseModal from "../AddHouseModal";
 export default function Houses() {
+
+  const [houses,setHouses] = useState([]);
+
+
+  useEffect(()=>{
+    const fetchData = async () => {
+      try {
+        const result = await axios.get('http://localhost:5000/api/houses');
+        setHouses(result.data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  },[])
 
     return(
 
@@ -56,64 +73,39 @@ export default function Houses() {
               </ul>
             </aside>
             
+           
             <main>
-            <main>
-            <button type="button" class="btn btn-primary" style={{marginTop: '1rem', marginLeft:'1rem'}}>Add House</button>
+            <AddHouseModal />
               <table className="table" style={{width: '800px',marginTop:'4rem', marginLeft:'3rem', textAlign:'center'}}>
               <thead>
                <tr>
                 <th scope="col">#</th>
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Email</th>
                 <th scope="col">Action</th>
               </tr>
            </thead>
           <tbody>
+            {
+              houses.map(row =>(
            <tr>
-            <th scope="row">1</th>
-             <td>Mark</td>
-             <td>Otto</td>
-             <td>@mdo</td>
+            <th scope="row">{row.propertynumber}</th>
+             <td>{row.location}</td>
+             <td>{row.residencetype}</td>
+             <td>{row.totalunits}</td>
              <td>
               <button type="button" class="btn btn-success" style={{marginRight:'1rem'}}>Edit</button>
                 <button type="button" class="btn btn-danger">Delete</button>
              </td>
           </tr>
-          <tr>
-           <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>
-              <button type="button" class="btn btn-success" style={{marginRight:'1rem'}}>Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-             </td>
-         </tr>
-        <tr>
-         <th scope="row">3</th>
-         <td>Larry</td>
-         <td>Bird</td>
-         <td>@twitter</td>
-         <td>
-              <button type="button" class="btn btn-success" style={{marginRight:'1rem'}}>Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-             </td>
-       </tr>
-       <tr>
-           <th scope="row">4</th>
-            <td>Mike</td>
-            <td>Abere</td>
-            <td>@mike</td>
-            <td>
-              <button type="button" class="btn btn-success" style={{marginRight:'1rem'}}>Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-             </td>
-         </tr>
+       
+       ))
+      }
      </tbody>
     </table>
       </main>
-            </main>
+           
           
         </div>
     
