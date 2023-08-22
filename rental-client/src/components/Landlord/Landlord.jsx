@@ -36,7 +36,7 @@ function handleDelete(id){
               <header className='header'>
                 <div className='menu_icon'>
                  <span className="material-icons-outlined">menu</span>
-  
+                 </div>
                  <div className='header_left'>
                  <span className="material-icons-outlined">search</span>
                  
@@ -48,7 +48,7 @@ function handleDelete(id){
                   <span className="material-icons-outlined">account_circle</span>
                  </div>
   
-                </div>
+                
               </header>
               <aside className='sidebar'>
                 <div className='sidebar_title'>

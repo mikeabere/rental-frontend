@@ -1,19 +1,27 @@
 import React from 'react';
 import   './dashboard.css'
+//import Chart from "chart.js/auto";
+//import { Bar } from "react-chartjs-2";
+import {Link} from "react-router-dom";
 
-import {Link} from "react-router-dom"
 
 
 
 export default function Dashboard() {
 
 
+ 
+ 
+
+ 
+   
+
     return(
         <div className='grid_container'>
             <header className='header'>
               <div className='menu_icon'>
                <span className="material-icons-outlined">menu</span>
-
+               </div>
                <div className='header_left'>
                <span className="material-icons-outlined">search</span>
                
@@ -23,9 +31,10 @@ export default function Dashboard() {
                 <span className="material-icons-outlined">notifications</span>
                 <span className="material-icons-outlined">email</span>
                 <span className="material-icons-outlined">account_circle</span>
+               
                </div>
 
-              </div>
+              
             </header>
             <aside className='sidebar'>
               <div className='sidebar_title'>
@@ -69,33 +78,36 @@ export default function Dashboard() {
                 <div className='card'>
                  <div className='card_inner'>
                   <h3>LANDLORDS</h3>
-                  <span className="material-icons-outlined">inventory_2</span>
+                  <span class="material-icons-outlined">person</span>
                  </div>
                  <h1>2</h1>
                 </div>
                 <div className='card'>
                  <div className='card_inner'>
                   <h3>TENNANTS</h3>
-                  <span className="material-icons-outlined">inventory_2</span>
+                  <span class="material-icons-outlined">group</span>
                  </div>
                  <h1>24</h1>
                 </div>
                 <div className='card'>
                  <div className='card_inner'>
                   <h3>HOUSES</h3>
-                  <span className="material-icons-outlined">inventory_2</span>
+                  <span class="material-icons-outlined">apartment</span>
                  </div>
                  <h1>5</h1>
                 </div>
                 <div className='card'>
                  <div className='card_inner'>
                   <h3>PAYMENT</h3>
-                  <span className="material-icons-outlined">inventory_2</span>
+                  <span class="material-icons-outlined">credit_card</span>
                  </div>
                  <h1>20000</h1>
                 </div>
 
               </div>
+              
+             
+
             </main>
         </div>
     )

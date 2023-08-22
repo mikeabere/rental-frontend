@@ -29,7 +29,7 @@ function Signup() {
     
   
       console.log(response.data);
-      navigate('/Login');
+      navigate('/');
     } catch (error) {
       console.log(error.response);
       
@@ -63,7 +63,7 @@ function Signup() {
       
       <Form.Group className="mb-3" controlId="formBasicRole">
         <Form.Label>Select Role</Form.Label>
-        <Form.Select value={selecteditem} onChange={(e)=> setSelectedItem(e.target.value)}>
+        <Form.Select  value={selecteditem} onChange={(e)=> setSelectedItem(e.target.value)}>
          <option value="select">select</option>
          <option value="landlord">landlord</option>
          <option value="admin">admin</option>
@@ -80,7 +80,7 @@ function Signup() {
       <Button variant="primary" type="submit" style={{width:'100%'}}>
         Signup
       </Button>
-      <Link to='/Login'>Already have account? Login</Link>
+      <Link to='/'>Already have account? Login</Link>
       </div>
     </Form>
 
