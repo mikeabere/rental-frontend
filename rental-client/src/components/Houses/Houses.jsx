@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import './houses.css'
 import {Link} from "react-router-dom";
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+
+
 import AddHouseModal from "../AddHouseModal";
 
 export default function Houses() {
@@ -16,20 +18,7 @@ export default function Houses() {
   const [editModalVisible, setEditModalVisible] = useState(false);
 
 
-  function handleAddData(data) {
-    axios.post('http://localhost:5000/api/house/add', data)
-      .then((response) => {
-        // Assuming `houses` is the array holding all houses' data on the frontend
-      // Update `houses` with the new cleaner data received from the response
-      setHouses( [...houses, response.data]);
-      setShowDeleteModal(false);
-      })
-     
-      .catch((error) => {
-        console.error(error);
-      });
-      
-  }
+  
 
   useEffect(()=>{
     const fetchData = async () => {
@@ -57,12 +46,13 @@ export default function Houses() {
     }
   };
 
-  const handleEdit = (_id) => {
-    setEditingId(_id);
+  const handleEdit = (house) => {
+    setEditingId(house);
     setEditModalVisible(true);
   };
 
-  const handleSave = async () => {
+  const handleSave = async (e) => {
+    e.preventDefault();
     // Perform the update request using axios
     axios
       .put(`http://localhost:5000/api/house/edit/${editingId._id}`, editingId)
@@ -74,7 +64,7 @@ export default function Houses() {
           return house;
         });
         setHouses(updatedData);
-        
+        setEditModalVisible(false);
         setEditingId(null);
       })
       .catch((error) => {
@@ -141,13 +131,9 @@ export default function Houses() {
             
            
             <main>
-              <AddHouseModal 
-              onSubmit={handleAddData}
               
-              />
-               
-          
-
+              <AddHouseModal />
+              
               <table className="table" style={{width: '800px',
                marginTop:'4rem', marginLeft:'3rem',
                textAlign:'center'}}
@@ -172,7 +158,7 @@ export default function Houses() {
            <td>
           
                <>
-                 <button className="btn btn-success" style={{marginRight:'10px'}} onClick={() => handleEdit(row._id)}>Edit</button>
+                 <button className="btn btn-success" style={{marginRight:'10px'}} onClick={() => handleEdit(row)}>Edit</button>
                  <button className="btn btn-danger" onClick={() => {
                    setDeletingId(row._id);
                    setShowDeleteModal(true);
@@ -190,6 +176,7 @@ export default function Houses() {
       <Modal 
        title="Confirm Delete"
        show={showDeleteModal}
+       centered
        >
       <p style={{color:'black'}}>Are you sure you want to delete this house?</p>
       <div className="modal-content" style={{display:'flex',flexDirection:'row',
@@ -202,16 +189,9 @@ export default function Houses() {
     </table>
       </main>
            
-      <Modal
-       
-        show={editModalVisible}
-        onOk={handleSave}
-        
-        onCancel={handleEditModalCancel}
-        
-      >
+      <Modal show={editModalVisible} onHide={()=>{setEditModalVisible(false);}}>
         {editingId && (
-          <Form>
+          <Form  onSubmit={handleSave}>
               <Modal.Header closeButton>
                <Modal.Title>Edit House</Modal.Title>
              </Modal.Header>
@@ -270,7 +250,7 @@ export default function Houses() {
           <Button variant="secondary" onClick={handleEditModalCancel}>
             Close
           </Button>
-          <Button variant="primary" type='submit' onClick={handleSave}>
+          <Button variant="primary" type='submit' >
             Submit
           </Button>
         </Modal.Footer>

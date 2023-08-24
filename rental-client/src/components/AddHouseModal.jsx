@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import axios from 'axios';
 
 function AddHouseModal() {
   
@@ -16,8 +17,28 @@ function AddHouseModal() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
  
+
+  async function  handleAddData(e) {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/api/house/add', {houseName:houseName,
+        propertyNumber:propertyNumber,
+        houseLocation:houseLocation,
+        landLordName:landLordName,
+        houseRent:houseRent,
+        houseType:houseType,
+        houseDesc:houseDesc});
+    
+  
+      console.log(response.data);
+      setShow(false);
+    } catch (error) {
+      console.log(error.response);
+      
+    }
+
+  }
 
   return (
     <>
@@ -26,14 +47,14 @@ function AddHouseModal() {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-      <Form  className='signup-form' >
+      <Form  className='' method='POST' action='/api/house/add' onSubmit={handleAddData}>
         <Modal.Header closeButton>
           <Modal.Title>House Form</Modal.Title>
         </Modal.Header>
         <Modal.Body>
 
         
-          <div className='signup-one'>
+          
       <Form.Group className="mb-3" controlId="formBasicHousename">
         <Form.Label>House Name</Form.Label>
         <Form.Control type="text" placeholder="House Name" value={houseName} onChange={(e)=> setHouseName(e.target.value)}/>
@@ -48,8 +69,8 @@ function AddHouseModal() {
         <Form.Label>House Location</Form.Label>
         <Form.Control type="text" placeholder="House Location" value={houseLocation} onChange={(e)=> setHouseLocation(e.target.value)}/>
       </Form.Group>
-      </div>
-      <div className='signup-two'>
+      
+      
       <Form.Group className="mb-3" controlId="formBasicLandlordname">
         <Form.Label>Landlord Name</Form.Label>
         <Form.Control type="text" placeholder="Landlord Name" value={landLordName} onChange={(e)=> setLandLordName(e.target.value)}/>
@@ -72,14 +93,14 @@ function AddHouseModal() {
         <Form.Label>House Desc</Form.Label>
         <Form.Control type="text" placeholder="House Desc" value={houseDesc} onChange={(e)=> setHouseDesc(e.target.value)}/>
       </Form.Group>
-      </div>
+      
       
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" type='submit' onClick={handleClose}>
+          <Button variant="primary" type='submit'>
             Submit
           </Button>
         </Modal.Footer>
