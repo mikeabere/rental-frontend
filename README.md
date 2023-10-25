@@ -1,5 +1,5 @@
 # rental-frontend
-This is a Rental System Called Keja-Smart.
-created using MERN Stack(MongoBB,Express,React,Nodejs).
-The FrontEnd uses Vite.
-Type npm run dev in the console to launch the app.
+This is a proper Management  system called Keja-Smart
+created using MERN STACK(MongoDB,Express,React,Nodejs).
+The FrontEND uses Vite, material-icons and Bootstrap.
+Type npm run dev in the Console to Run the APP.
