@@ -6,13 +6,14 @@ import './signup.css';
 import {useNavigate, Link} from 'react-router-dom';
 import axios from 'axios';
 
+
 function Signup() {
-  
+ 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState('');
-  const [selecteditem, setSelectedItem] = useState('landlord','admin','tennant');
+  const [role, setRole] = useState('landlord','admin','tennant');
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
@@ -24,10 +25,10 @@ function Signup() {
         lastName:lastName,
         phone:phone,
         email:email,
-        selecteditem:selecteditem,
+        role:role,
         password:password});
     
-  
+        
       console.log(response.data);
       navigate('/');
     } catch (error) {
@@ -63,7 +64,7 @@ function Signup() {
       
       <Form.Group className="mb-3" controlId="formBasicRole">
         <Form.Label>Select Role</Form.Label>
-        <Form.Select  value={selecteditem} onChange={(e)=> setSelectedItem(e.target.value)}>
+        <Form.Select  value={role} onChange={(e)=> setRole(e.target.value)}>
          <option value="select">select</option>
          <option value="landlord">landlord</option>
          <option value="admin">admin</option>

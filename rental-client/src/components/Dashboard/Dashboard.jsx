@@ -1,22 +1,25 @@
 import React,{useEffect,useState} from 'react';
-import   './dashboard.css'
+import   './dashboard.css';
 //import Chart from "chart.js/auto";
 //import { Bar } from "react-chartjs-2";
 import {Link, useNavigate} from "react-router-dom";
-
-import { Chart as ChartJS } from 'chart.js/auto'
+//import { useUser } from '../UserContext';
+import { Chart as ChartJS } from 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 
 
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+  
+
   const [landlordCount, setLandlordCount] = useState(null);
   const [houseCount, setHouseCount] = useState(null);
 
   const [data, setData] = useState([]);
 
-  const navigate = useNavigate();
+  
 
 // Fetch the count of landlords from the API and update the state
   useEffect(() => {
@@ -65,8 +68,14 @@ function Logout(){
   navigate('/');
 }
 
+ 
+
+
     return(
+
+       
         <div className='grid_container'>
+     
             <header className='header'>
               <div className='menu_icon'>
                <span className="material-icons-outlined">menu</span>
@@ -79,12 +88,13 @@ function Logout(){
                <div className='header_right'>
                 <span className="material-icons-outlined">notifications</span>
                 <span className="material-icons-outlined">email</span>
-                <span className="material-icons-outlined">account_circle</span>
+                <span className="material-icons-outlined">account_circle</span><span></span>
                
                </div>
 
               
             </header>
+            
             <aside className='sidebar'>
               <div className='sidebar_title'>
                 <div className='sidebar_brand'>
@@ -98,13 +108,13 @@ function Logout(){
                 <span className="material-icons-outlined">dashboard</span>Dashboard
                 </li>
                 <li className='sidebar_list_item'>
-                <span className="material-icons-outlined">person_outline</span><Link style={{textDecoration: 'none', color: 'white'}} to='/Landlord'>Landlord</Link>
+                <span className="material-icons-outlined">person_outline</span><Link style={{textDecoration: 'none', color: '#9e9ea4'}} to='/Landlord'>Landlord</Link>
                 </li>
                 <li className='sidebar_list_item'>
-                <span className="material-icons-outlined">groups</span><Link style={{textDecoration: 'none', color: 'white'}} to='/Tennants'>Tennants</Link>
+                <span className="material-icons-outlined">groups</span><Link style={{textDecoration: 'none', color: '#9e9ea4'}} to='/Tennants'>Tennants</Link>
                 </li>
                 <li className='sidebar_list_item'>
-                <span className="material-icons-outlined">apartment</span><Link style={{textDecoration: 'none', color: 'white'}} to='/Houses'>Houses</Link>
+                <span className="material-icons-outlined">apartment</span><Link style={{textDecoration: 'none', color: '#9e9ea4'}} to='/Houses'>Houses</Link>
                 </li>
                 <li className='sidebar_list_item'>
                 <span className="material-icons-outlined">payment</span>Payment
@@ -113,11 +123,11 @@ function Logout(){
                 <span className="material-icons-outlined">analytics</span>Reports
                 </li>
                 <li className='sidebar_list_item'>
-                <span className="material-icons-outlined">settings</span><Link onClick={Logout} style={{textDecoration: 'none', color: 'white'}} to='/'>Logout</Link>
+                <span class="material-icons-outlined">logout</span><Link onClick={Logout} style={{textDecoration: 'none', color: '#9e9ea4'}} to='/'>Logout</Link>
                 </li>
               </ul>
             </aside>
-
+            
             <main className='main_section'>
               <div className='main_title'>
                 <h2>DASHBOARD</h2>
@@ -157,8 +167,11 @@ function Logout(){
               
               <Bar data={chartData} options={{ maintainAspectRatio: false }} />
              
-
+              
             </main>
+            
         </div>
+       
+        
     )
 }
