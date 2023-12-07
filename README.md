@@ -1,5 +1,5 @@
 # rental-frontend
 T
 creat usiMECK(MongoDB,Express,React,Nodejs).
-The FontEND uses ite, material-icons and ootstrap.
+The FontEND uses ite, material-icons and tstrap.
 Type npm run dev in the Console to Run the APP.
