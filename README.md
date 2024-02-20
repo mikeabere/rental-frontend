@@ -1,5 +1,5 @@
 # rental-frontend
 T
-cra usiMCK(M,ER,N).
+cra usiMCK(M,E,N).
 The FD us te, mer-in and rap.
 Tpe nm rn dv in the C to Rn the AP.
