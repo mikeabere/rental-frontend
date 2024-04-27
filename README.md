@@ -2,4 +2,4 @@
 T
 cMK.
 T F s t -n d r.
-T n r d i e C t R
+T n r d i e C t 
